@@ -48,7 +48,6 @@ public class PlayerBaseState : IState
     {
 
     }
-    //Read InputActions
     private void ReadMovementInput()
     {
        stateMachine.MovementInput = stateMachine.Player.Input.PlayerActions.Movement.ReadValue<Vector2>();
