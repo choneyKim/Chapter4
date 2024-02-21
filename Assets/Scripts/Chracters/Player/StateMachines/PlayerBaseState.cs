@@ -44,12 +44,19 @@ public class PlayerBaseState : IState
         PlayerInput input = stateMachine.Player.Input;
         input.PlayerActions.Movement.canceled += OnMovementCanceled;
         input.PlayerActions.Run.started += OnRunStarted;
+        input.PlayerActions.Jump.started += OnJumpStarted;
     }
     protected virtual void RemoveInputActionsCallbacks()
     {
         PlayerInput input = stateMachine.Player.Input;
         input.PlayerActions.Movement.canceled -= OnMovementCanceled;
         input.PlayerActions.Run.started -= OnRunStarted;
+        input.PlayerActions.Jump.started -= OnJumpStarted;
+    }
+
+    protected virtual void OnJumpStarted(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        
     }
 
     protected virtual void OnRunStarted(UnityEngine.InputSystem.InputAction.CallbackContext context)
@@ -92,7 +99,7 @@ public class PlayerBaseState : IState
     {
             float movementSpeed = GetMovementSpeed();
             stateMachine.Player.Controller.Move(
-                (movementDirection * movementSpeed) * Time.deltaTime
+                ((movementDirection * movementSpeed)+stateMachine.Player.ForceReceiver.Movement )* Time.deltaTime
                 );
     }
 
