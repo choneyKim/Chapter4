@@ -109,6 +109,10 @@ public class PlayerBaseState : IState
         {
             StartAnimation(stateMachine.Player.AnimationData.RunParameterHash);
         }
+        if (!stateMachine.Isrunning && stateMachine.MovementInput == Vector2.zero||!stateMachine.Player.Controller.isGrounded)
+        {
+            StopAnimation(stateMachine.Player.AnimationData.RunParameterHash);
+        }
     }
 
 
