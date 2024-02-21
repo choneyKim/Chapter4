@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerGroundedState : PlayerBaseState
 {
@@ -24,11 +26,23 @@ public class PlayerGroundedState : PlayerBaseState
     public override void Update()
     {
         base.Update();
+        if (stateMachine.IsAttacking)
+        {
+            OnAttack();
+            return;
+        }
     }
+
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        if (!stateMachine.Player.Controller.isGrounded
+       && stateMachine.Player.Controller.velocity.y < Physics.gravity.y * Time.fixedDeltaTime)
+        {
+            stateMachine.ChangeState(stateMachine.FallState);
+            return;
+        }
     }
 
     protected override void OnMovementCanceled(InputAction.CallbackContext context)
@@ -37,13 +51,14 @@ public class PlayerGroundedState : PlayerBaseState
         {
             return;
         }
-
+        
         stateMachine.ChangeState(stateMachine.IdleState);
 
         base.OnMovementCanceled(context);
     }
     protected override void OnJumpStarted(InputAction.CallbackContext context)
     {
+        if(stateMachine.Player.Controller.isGrounded)
         stateMachine.ChangeState(stateMachine.JumpState);
     }
 
@@ -51,5 +66,10 @@ public class PlayerGroundedState : PlayerBaseState
     {
         stateMachine.ChangeState(stateMachine.WalkState);
     }
+    private void OnAttack()
+    {
+        stateMachine.ChangeState(stateMachine.ComboAttackState);
+    }
 
+    
 }

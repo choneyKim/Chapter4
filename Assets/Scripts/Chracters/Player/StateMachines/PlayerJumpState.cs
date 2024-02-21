@@ -20,6 +20,7 @@ public class PlayerJumpState : PlayerAirState
 
     public override void Exit()
     {
+        stateMachine.Player.ForceReceiver.Reset();
         base.Exit();
 
         StopAnimation(stateMachine.Player.AnimationData.JumpParameterHash);

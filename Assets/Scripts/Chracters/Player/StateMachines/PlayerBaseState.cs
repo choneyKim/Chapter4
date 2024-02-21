@@ -45,6 +45,9 @@ public class PlayerBaseState : IState
         input.PlayerActions.Movement.canceled += OnMovementCanceled;
         input.PlayerActions.Run.started += OnRunStarted;
         input.PlayerActions.Jump.started += OnJumpStarted;
+
+        input.PlayerActions.Attack.performed += OnAttackPerformed;
+        input.PlayerActions.Attack.canceled += OnAttackCanceled;
     }
     protected virtual void RemoveInputActionsCallbacks()
     {
@@ -52,6 +55,9 @@ public class PlayerBaseState : IState
         input.PlayerActions.Movement.canceled -= OnMovementCanceled;
         input.PlayerActions.Run.started -= OnRunStarted;
         input.PlayerActions.Jump.started -= OnJumpStarted;
+
+        input.PlayerActions.Attack.performed -= OnAttackPerformed;
+        input.PlayerActions.Attack.canceled -= OnAttackCanceled;
     }
 
     protected virtual void OnJumpStarted(UnityEngine.InputSystem.InputAction.CallbackContext context)
@@ -68,12 +74,21 @@ public class PlayerBaseState : IState
     {
         
     }
+    protected virtual void OnAttackPerformed(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        stateMachine.IsAttacking = true;
+    }
+    protected virtual void OnAttackCanceled(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        stateMachine.IsAttacking = false;
+    }
 
     //Read InputActions
     private void ReadMovementInput()
     {
        stateMachine.MovementInput = stateMachine.Player.Input.PlayerActions.Movement.ReadValue<Vector2>();
     }
+
 
     private void Move()
     {
@@ -102,6 +117,10 @@ public class PlayerBaseState : IState
                 ((movementDirection * movementSpeed)+stateMachine.Player.ForceReceiver.Movement )* Time.deltaTime
                 );
     }
+    protected void ForceMove()
+    {
+        stateMachine.Player.Controller.Move(stateMachine.Player.ForceReceiver.Movement * Time.deltaTime);
+    }
 
     private float GetMovementSpeed()
     {
@@ -127,6 +146,23 @@ public class PlayerBaseState : IState
         stateMachine.Player.Animator.SetBool(animationHash, false);
     }
 
+    protected float GetNormalizedTime(Animator animator, string tag)
+    {
+        AnimatorStateInfo currentInfo = animator.GetCurrentAnimatorStateInfo(0);
+        AnimatorStateInfo nextInfo = animator.GetNextAnimatorStateInfo(0);
 
+        if (animator.IsInTransition(0) && nextInfo.IsTag(tag))
+        {
+            return nextInfo.normalizedTime;
+        }
+        else if (!animator.IsInTransition(0) && currentInfo.IsTag(tag))
+        {
+            return currentInfo.normalizedTime;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
 
 }
