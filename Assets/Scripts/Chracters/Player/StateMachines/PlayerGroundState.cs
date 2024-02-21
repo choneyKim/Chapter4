@@ -31,21 +31,21 @@ public class PlayerGroundedState : PlayerBaseState
         base.PhysicsUpdate();
     }
 
-    //protected override void OnMovementCanceled(InputAction.CallbackContext context)
-    //{
-    //    if (stateMachine.MovementInput == Vector2.zero)
-    //    {
-    //        return;
-    //    }
+    protected override void OnMovementCanceled(InputAction.CallbackContext context)
+    {
+        if (stateMachine.MovementInput == Vector2.zero)
+        {
+            return;
+        }
 
-    //    stateMachine.ChangeState(stateMachine.IdleState);
+        stateMachine.ChangeState(stateMachine.IdleState);
 
-    //    base.OnMovementCanceled(context);
-    //}
+        base.OnMovementCanceled(context);
+    }
 
-    //protected virtual void OnMove()
-    //{
-    //    stateMachine.ChangeState(stateMachine.WalkState);
-    //}
+    protected virtual void OnMove()
+    {
+        stateMachine.ChangeState(stateMachine.WalkState);
+    }
 
 }
