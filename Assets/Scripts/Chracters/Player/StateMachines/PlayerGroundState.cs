@@ -51,10 +51,17 @@ public class PlayerGroundedState : PlayerBaseState
         {
             return;
         }
-        
+        if (!stateMachine.Isrunning)
+            stateMachine.ChangeState(stateMachine.IdleState);
+        else
+            StopAnimation(stateMachine.Player.AnimationData.RunParameterHash);
+        base.OnMovementCanceled(context);
+    }
+    protected override void OnRunCanceled(InputAction.CallbackContext context)
+    {
         stateMachine.ChangeState(stateMachine.IdleState);
 
-        base.OnMovementCanceled(context);
+        base.OnRunCanceled(context);
     }
     protected override void OnJumpStarted(InputAction.CallbackContext context)
     {

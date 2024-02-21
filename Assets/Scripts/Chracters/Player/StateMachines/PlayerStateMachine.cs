@@ -17,6 +17,7 @@ public class PlayerStateMachine : StateMachine
     public float MovementSpeedModifier { get; set; } = 1.0f;
     public float JumpForce { get;  set; }
     public bool IsAttacking { get; set; }
+    public bool Isrunning { get; set; }
     public int ComboIndex { get; set; }
 
     public Transform MainCameraTransform { get; set; }

@@ -43,17 +43,23 @@ public class PlayerBaseState : IState
     {
         PlayerInput input = stateMachine.Player.Input;
         input.PlayerActions.Movement.canceled += OnMovementCanceled;
-        input.PlayerActions.Run.started += OnRunStarted;
+        input.PlayerActions.Run.performed += OnRunStarted;
+        input.PlayerActions.Run.canceled += OnRunCanceled;
+
         input.PlayerActions.Jump.started += OnJumpStarted;
 
         input.PlayerActions.Attack.performed += OnAttackPerformed;
         input.PlayerActions.Attack.canceled += OnAttackCanceled;
     }
+
+
     protected virtual void RemoveInputActionsCallbacks()
     {
         PlayerInput input = stateMachine.Player.Input;
         input.PlayerActions.Movement.canceled -= OnMovementCanceled;
         input.PlayerActions.Run.started -= OnRunStarted;
+        input.PlayerActions.Run.started -= OnRunCanceled;
+
         input.PlayerActions.Jump.started -= OnJumpStarted;
 
         input.PlayerActions.Attack.performed -= OnAttackPerformed;
@@ -67,12 +73,12 @@ public class PlayerBaseState : IState
 
     protected virtual void OnRunStarted(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        
+        stateMachine.Isrunning = true;
     }
 
     protected virtual void OnMovementCanceled(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        
+       
     }
     protected virtual void OnAttackPerformed(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
@@ -81,6 +87,10 @@ public class PlayerBaseState : IState
     protected virtual void OnAttackCanceled(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
         stateMachine.IsAttacking = false;
+    }
+    protected virtual void OnRunCanceled(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        stateMachine.Isrunning = false;
     }
 
     //Read InputActions
@@ -95,6 +105,10 @@ public class PlayerBaseState : IState
         Vector3 movementDirection = GetMovementDirection();
         Rotate(movementDirection);
         Move(movementDirection);
+        if(stateMachine.Isrunning&&stateMachine.MovementInput!=Vector2.zero) 
+        {
+            StartAnimation(stateMachine.Player.AnimationData.RunParameterHash);
+        }
     }
 
 
