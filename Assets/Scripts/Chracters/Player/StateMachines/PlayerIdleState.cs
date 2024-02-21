@@ -18,12 +18,18 @@ public class PlayerIdleState : PlayerGroundedState
 
     public override void Exit()
     {
-        base.Enter();
+        base.Exit();
         StopAnimation(stateMachine.Player.AnimationData.IdleParameterHash);
     }
 
     public override void Update()
     {
         base .Update();
+        
+        if(stateMachine.MovementInput != Vector2.zero)
+        {
+            OnMove();
+            return;
+        }
     }
 }
