@@ -5,11 +5,13 @@ using UnityEngine;
 public class PlayerStateMachine : StateMachine
 { 
     public Player Player { get; }
-    public PlayerIdleState idleState { get; set; }
+    public PlayerIdleState IdleState { get; set; }
+    public PlayerWalkState WalkState { get; set; }
+    public PlayerRunState RunState { get; set; }
     public Vector2 MovementInput { get; set; }
     public float MovementSpeed { get; private set; }
     public float RotationDamping { get; private set; }
-    public float MovementSpeedModifier { get; set; } = 1f;
+    public float MovementSpeedModifier { get; set; } = 1.0f;
     public float JumpFoce { get;  set; }
 
     public Transform MainCameraTransform { get; set; }
@@ -17,7 +19,11 @@ public class PlayerStateMachine : StateMachine
     public PlayerStateMachine(Player player)
     {
         this.Player = player;
-        idleState = new PlayerIdleState(this);
+
+        IdleState = new PlayerIdleState(this);
+        WalkState = new PlayerWalkState(this);
+        RunState = new PlayerRunState(this);
+
         MainCameraTransform = Camera.main.transform;
 
         MovementSpeed = player.Data.GroundData.BaseSpeed;
