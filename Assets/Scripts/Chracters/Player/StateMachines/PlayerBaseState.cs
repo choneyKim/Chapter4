@@ -28,10 +28,9 @@ public class PlayerBaseState : IState
         ReadMovementInput();
     }
 
-
     public virtual void PhysicsUpdate()
     {
-        throw new System.NotImplementedException();
+       
     }
 
     public virtual void Update()
@@ -42,12 +41,27 @@ public class PlayerBaseState : IState
 
     protected virtual void AddInputActionsCallbacks() 
     {
-
+        PlayerInput input = stateMachine.Player.Input;
+        input.PlayerActions.Movement.canceled += OnMovementCanceled;
+        input.PlayerActions.Run.started += OnRunStarted;
     }
     protected virtual void RemoveInputActionsCallbacks()
     {
-
+        PlayerInput input = stateMachine.Player.Input;
+        input.PlayerActions.Movement.canceled -= OnMovementCanceled;
+        input.PlayerActions.Run.started -= OnRunStarted;
     }
+
+    protected virtual void OnRunStarted(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        
+    }
+
+    protected virtual void OnMovementCanceled(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        
+    }
+
     //Read InputActions
     private void ReadMovementInput()
     {
@@ -56,13 +70,13 @@ public class PlayerBaseState : IState
 
     private void Move()
     {
-        Vector3 movementDirection = GectMovementDirection();
+        Vector3 movementDirection = GetMovementDirection();
         Rotate(movementDirection);
         Move(movementDirection);
     }
 
 
-    private Vector3 GectMovementDirection()
+    private Vector3 GetMovementDirection()
     {
         Vector3 foward = stateMachine.MainCameraTransform.forward;
         Vector3 right = stateMachine.MainCameraTransform.right;
@@ -76,10 +90,10 @@ public class PlayerBaseState : IState
     }
     private void Move(Vector3 movementDirection)
     {
-        float movementSpeed = GetMovementSpeed();
-        stateMachine.Player.Controller.Move(
-            (movementDirection * movementSpeed) * Time.deltaTime
-            );
+            float movementSpeed = GetMovementSpeed();
+            stateMachine.Player.Controller.Move(
+                (movementDirection * movementSpeed) * Time.deltaTime
+                );
     }
 
     private float GetMovementSpeed()
