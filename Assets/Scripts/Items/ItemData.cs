@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Text.Json;
 
-public class ItemData : MonoBehaviour
+public class ItemDataExpired : MonoBehaviour
 {
     string id, name, discription, armorType, point, price, pointType;
     public List<ItemData> data;
-    public ItemData(string _id, string _name, string _discription, string _armorType, string _point, string _price, string _pointType)
+    public ItemDataExpired(string _id, string _name, string _discription, string _armorType, string _point, string _price, string _pointType)
     {
         id = _id;
         name = _name;

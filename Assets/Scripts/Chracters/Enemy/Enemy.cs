@@ -11,11 +11,14 @@ public class Enemy : MonoBehaviour
     [field: SerializeField] public PlayerAnimationData AnimationData { get; private set; }
 
     public Rigidbody Rigidbody { get; private set; }
+    public GameManager _gameManager;
     public Animator Animator { get; private set; }
     public ForceReceiver ForceReceiver { get; private set; }
     public CharacterController Controller { get; private set; }
 
     private EnemyStateMachine stateMachine;
+
+    public GameManager GameManager { get { return _gameManager; } }
 
     void Awake()
     {
@@ -44,5 +47,9 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         stateMachine.PhysicsUpdate();
+    }
+    public void Init(GameManager gameManager)
+    {
+        _gameManager = gameManager;
     }
 }

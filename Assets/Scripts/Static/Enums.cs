@@ -7,4 +7,12 @@ namespace EnumTypes
     {
         None, Warrior, Magichian, Ranger
     }
+    public enum ItemType
+    {
+        Weapon,
+        Neck,
+        Ring,
+        Gloves,
+        Shoes
+    }
 }

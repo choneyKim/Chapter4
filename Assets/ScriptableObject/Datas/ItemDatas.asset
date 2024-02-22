@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65dfae0e0fcdd834daaaf4c6be760630, type: 3}
+  m_Name: ItemDatas
+  m_EditorClassIdentifier: 
+  <ItemData>k__BackingField:
+    <ItemInfoDatas>k__BackingField:
+    - displayName: "\uB3C4\uBE44\uC7A5\uAC11"
+      description: "\uC220\uB0C4\uC0C8\uAC00 \uB09C\uB2E4"
+      type: 3
+      icon: {fileID: 1725302092, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 15
+      itemPrice: 1000
+      typeIcon_Equip: {fileID: 21300000, guid: 4ab757679e3b2d84ea1160686c623006, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 4ab757679e3b2d84ea1160686c623006, type: 3}
+    - displayName: "\uB3C4\uBE44\uBAA9\uAC78\uC774"
+      description: "\uBC18\uC9DD\uBC18\uC9DD"
+      type: 1
+      icon: {fileID: 1757586126, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 10
+      itemPrice: 1000
+      typeIcon_Equip: {fileID: 21300000, guid: 6aacbd2cce759584d9f35e7db3534eb1, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 87b1f5bc653959247b604739de1f4689, type: 3}
+    - displayName: "\uB3C4\uBE44\uBC18\uC9C0"
+      description: "\uC220\uCE5C\uAD6C\uC640 \uC6B0\uC815\uBC18\uC9C0"
+      type: 2
+      icon: {fileID: 1828987011, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 40
+      itemPrice: 1000
+      typeIcon_Equip: {fileID: 21300000, guid: 7b76d4a6841ca704c82cf7886ff58308, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 7b76d4a6841ca704c82cf7886ff58308, type: 3}
+    - displayName: "\uB3C4\uBE44\uC288\uC988"
+      description: "\uC591\uB9D0\uC5D0 \uAC00\uAE5D\uB2E4"
+      type: 4
+      icon: {fileID: -1914231062, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 15
+      itemPrice: 1000
+      typeIcon_Equip: {fileID: 21300000, guid: 9a1f1dd8819711b41abaf1a2f6c373aa, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 9a1f1dd8819711b41abaf1a2f6c373aa, type: 3}
+    - displayName: "\uB3C4\uBE44\uC644\uB4DC"
+      description: "\uC9C0\uD321\uC774\uB85C \uC0AC\uC6A9\uD55C\uB4EF\uD558\uB2E4"
+      type: 0
+      icon: {fileID: -1648996931, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 20
+      itemPrice: 1000
+      typeIcon_Equip: {fileID: 21300000, guid: 6aacbd2cce759584d9f35e7db3534eb1, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 87b1f5bc653959247b604739de1f4689, type: 3}
+    - displayName: "\uACE0\uD2B8\uC7A5\uAC11"
+      description: "\uAD6C\uBA4D\uC774 \uB098\uC788\uB2E4"
+      type: 3
+      icon: {fileID: -919266947, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 20
+      itemPrice: 1500
+      typeIcon_Equip: {fileID: 21300000, guid: 4ab757679e3b2d84ea1160686c623006, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 4ab757679e3b2d84ea1160686c623006, type: 3}
+    - displayName: "\uACE0\uD2B8\uBAA9\uAC78\uC774"
+      description: "\uBE5B\uC774\uBC14\uB7AC\uB2E4"
+      type: 1
+      icon: {fileID: -831492341, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 15
+      itemPrice: 1500
+      typeIcon_Equip: {fileID: 21300000, guid: 6aacbd2cce759584d9f35e7db3534eb1, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 87b1f5bc653959247b604739de1f4689, type: 3}
+    - displayName: "\uACE0\uD2B8\uBC18\uC9C0"
+      description: "\uCF54\uB529\uC5D4 \uBD88\uD544\uC694\uD558\uB2E4"
+      type: 2
+      icon: {fileID: 11235927, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 50
+      itemPrice: 1500
+      typeIcon_Equip: {fileID: 21300000, guid: 7b76d4a6841ca704c82cf7886ff58308, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 7b76d4a6841ca704c82cf7886ff58308, type: 3}
+    - displayName: "\uACE0\uD2B8\uC288\uC988"
+      description: "\uC624\uB798 \uC2E0\uC5B4 \uB0C4\uC0C8\uB09C\uB2E4"
+      type: 4
+      icon: {fileID: 483040947, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 20
+      itemPrice: 1500
+      typeIcon_Equip: {fileID: 21300000, guid: 9a1f1dd8819711b41abaf1a2f6c373aa, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 9a1f1dd8819711b41abaf1a2f6c373aa, type: 3}
+    - displayName: "\uACE0\uD2B8\uC644\uB4DC"
+      description: "\uB4F1 \uAE01\uC744\uB54C \uC88B\uB2E4"
+      type: 0
+      icon: {fileID: 645399759, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 25
+      itemPrice: 1500
+      typeIcon_Equip: {fileID: 21300000, guid: 6aacbd2cce759584d9f35e7db3534eb1, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 87b1f5bc653959247b604739de1f4689, type: 3}
+    - displayName: "\uB178\uC608\uC7A5\uAC11"
+      description: "\uBAA9\uC7A5\uAC11\uC774\uB2E4"
+      type: 3
+      icon: {fileID: 1095192031, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 10
+      itemPrice: 500
+      typeIcon_Equip: {fileID: 21300000, guid: 4ab757679e3b2d84ea1160686c623006, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 4ab757679e3b2d84ea1160686c623006, type: 3}
+    - displayName: "\uB178\uC608\uBAA9\uAC78\uC774"
+      description: "\uB178\uC608\uBC88\uD638\uAC00\uC801\uD600\uC788\uB2E4"
+      type: 1
+      icon: {fileID: -1540752031, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 5
+      itemPrice: 500
+      typeIcon_Equip: {fileID: 21300000, guid: 6aacbd2cce759584d9f35e7db3534eb1, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 87b1f5bc653959247b604739de1f4689, type: 3}
+    - displayName: "\uB178\uC608\uBC18\uC9C0"
+      description: "\uC804\uC790\uBC1C\uCC0C \uAE30\uB2A5\uC744\uD55C\uB2E4"
+      type: 2
+      icon: {fileID: -1783247119, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 20
+      itemPrice: 500
+      typeIcon_Equip: {fileID: 21300000, guid: 7b76d4a6841ca704c82cf7886ff58308, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 7b76d4a6841ca704c82cf7886ff58308, type: 3}
+    - displayName: "\uB178\uC608\uC288\uC988"
+      description: "\uC0BC\uC120\uC2AC\uB9AC\uD37C"
+      type: 4
+      icon: {fileID: -1138049189, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 10
+      itemPrice: 500
+      typeIcon_Equip: {fileID: 21300000, guid: 9a1f1dd8819711b41abaf1a2f6c373aa, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 9a1f1dd8819711b41abaf1a2f6c373aa, type: 3}
+    - displayName: "\uB178\uC608\uC644\uB4DC"
+      description: "\uD5C8\uB984\uD55C \uC9C0\uD321\uC774\uB2E4"
+      type: 0
+      icon: {fileID: 2078484839, guid: 2164ca0bcc7401d4eb1424d7a5bbccbd, type: 3}
+      itemPoint: 15
+      itemPrice: 500
+      typeIcon_Equip: {fileID: 21300000, guid: 6aacbd2cce759584d9f35e7db3534eb1, type: 3}
+      typeIcon_Shop: {fileID: 21300000, guid: 87b1f5bc653959247b604739de1f4689, type: 3}

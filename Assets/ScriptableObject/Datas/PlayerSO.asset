@@ -39,3 +39,8 @@ MonoBehaviour:
       <ForceTransitionTime>k__BackingField: 0.2
       <Force>k__BackingField: 3
       <Damage>k__BackingField: 5
+  chracterPrefabs:
+  - {fileID: 8559298180691662900, guid: 43efdb17220d88548be39ff0215962d7, type: 3}
+  - {fileID: 5382885955976640217, guid: e18829d6709acd5448a2bf75b190722e, type: 3}
+  - {fileID: 5240386342355995329, guid: 1ff5deb7875f4b749b535a386f0e7c67, type: 3}
+  - {fileID: 223583792003916304, guid: f1cc82e81bf22cf45956dd61f098a1a0, type: 3}
