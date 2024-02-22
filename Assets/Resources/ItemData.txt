@@ -1,0 +1,15 @@
+ID00001	도비장갑	술냄새가 난다	Gloves	15	1000	Critical
+ID00002	도비목걸이	반짝반짝	Neck	10	1000	Attack
+ID00003	도비반지	술치구와 우정반지	Ring	40	1000	Health
+ID00004	도비슈즈	양말에 가깝다	Shos	15	1000	Armor
+ID00005	도비완드	지팡이로 사용한듯하다	Weapon	20	1000	Attack
+ID00006	고트장갑	구멍이 나있다	Gloves	20	1500	Critical
+ID00007	고트목걸이	빛이바랬다	Neck	15	1500	Attack
+ID00008	고트반지	코딩엔 불필요하다	Ring	50	1500	Health
+ID00009	고트슈즈	오래 신어 냄새난다	Shos	20	1500	Armor
+ID00010	고트완드	등 긁을때 좋다	Weapon	25	1500	Attack
+ID00011	노예장갑	목장갑이다	Gloves	10	500	Critical
+ID00012	노예목걸이	노예번호가 적혀있다	Neck	5	500	Attack
+ID00013	노예반지	전자발찌 기능을한다	Ring	20	500	Health
+ID00014	노예슈즈	삼선슬리퍼	Shos	10	500	Armor
+ID00015	노예완드	허름한 지팡이다	Weapon	15	500	Attack
